@@ -1,8 +1,8 @@
 {
-  "id_pedido": 1,
-  "data": "2022-05-01",
-  "valor_total_itens": 100.0,
-  "valor_frete": 10.0,
+  "id_pedido": 2,
+  "data": "2024-01-01",
+  "valor_total_itens": 11050.0,
+  "valor_frete": 72.0,
   "itens": [
     {
       "id_item": 1,
@@ -37,11 +37,12 @@
   ],
   "destinatario": {
     "nome": "John Doe",
-    "tipo_pessoa": "FISICA",
+    "tipo_pessoa": "JURIDICA",
+    "regime_tributacao": "SIMPLES_NACIONAL",
     "documentos": [
       {
-        "tipo": "CPF",
-        "numero": "88740347095"
+        "tipo": "CNPJ",
+        "numero": "49695613000180"
       }
     ],
     "enderecos": [
