@@ -13,19 +13,17 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Item {
-	 @JsonProperty("id_item")
-	    private String idItem;
+    @JsonProperty("id_item")
+    private String idItem;
 
-	    @JsonProperty("descricao")
-	    private String descricao;
+    @JsonProperty("descricao")
+    private String descricao;
 
-	    @JsonProperty("valor_unitario")
-	    private double valorUnitario;
+    @JsonProperty("valor_unitario")
+    private double valorUnitario;
 
-	    @JsonProperty("quantidade")
-	    private int quantidade;
-
-
+    @JsonProperty("quantidade")
+    private int quantidade;
 
 
 }
