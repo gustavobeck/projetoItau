@@ -56,18 +56,10 @@ public class GeradorNotaFiscalServiceImpl implements GeradorNotaFiscalService {
         log.info("Criando nota fiscal com ID: [{}]", idNotaFiscal);
         final NotaFiscal notaFiscal = criarNotaFiscal(pedido, idNotaFiscal, valorFreteFinal, itemNotaFiscalList);
 
-        log.info("Enviando nota fiscal para baixa de estoque.");
-        this.estoqueService.enviarNotaFiscalParaBaixaEstoque(notaFiscal);
+        log.info("Iniciando processamento da nota fiscal.");
+        this.processarNotaFiscal(notaFiscal);
 
-        log.info("Enviando nota fiscal para registro.");
-        this.registroService.registrarNotaFiscal(notaFiscal);
-
-        log.info("Agendando entrega.");
-        this.entregaService.agendarEntrega(notaFiscal);
-
-        log.info("Enviando nota fiscal para contas a receber.");
-        this.financeiroService.enviarNotaFiscalParaContasReceber(notaFiscal);
-
+        log.info("Nota fiscal criada e processada com sucesso.");
         return notaFiscal;
     }
 
@@ -128,5 +120,19 @@ public class GeradorNotaFiscalServiceImpl implements GeradorNotaFiscalService {
                 .itens(itemNotaFiscalList)
                 .destinatario(pedido.getDestinatario())
                 .build();
+    }
+
+    private void processarNotaFiscal(final NotaFiscal notaFiscal) {
+        log.info("Enviando nota fiscal para baixa de estoque.");
+        this.estoqueService.enviarNotaFiscalParaBaixaEstoque(notaFiscal);
+
+        log.info("Enviando nota fiscal para registro.");
+        this.registroService.registrarNotaFiscal(notaFiscal);
+
+        log.info("Agendando entrega.");
+        this.entregaService.agendarEntrega(notaFiscal);
+
+        log.info("Enviando nota fiscal para contas a receber.");
+        this.financeiroService.enviarNotaFiscalParaContasReceber(notaFiscal);
     }
 }
