@@ -1,14 +1,38 @@
 {
   "id_pedido": 1,
   "data": "2022-05-01",
-  "valor_total_itens": 100.0,
+  "valor_total_itens": 11050.0,
   "valor_frete": 10.0,
   "itens": [
+    {
+      "id_item": 1,
+      "descricao": "Monitor LCD SAMSUNG",
+      "valor_unitario": 700,
+      "quantidade": 8
+    },
+    {
+      "id_item": 2,
+      "descricao": "Celular SAMSUNG S24",
+      "valor_unitario": 1000,
+      "quantidade": 5
+    },
     {
       "id_item": 3,
       "descricao": "Teclado USB",
       "valor_unitario": 50,
       "quantidade": 2
+    },
+    {
+      "id_item": 4,
+      "descricao": "Mouse USB",
+      "valor_unitario": 25,
+      "quantidade": 2
+    },
+    {
+      "id_item": 5,
+      "descricao": "Headset JBL",
+      "valor_unitario": 100,
+      "quantidade": 3
     }
   ],
   "destinatario": {
